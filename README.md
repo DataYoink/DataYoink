@@ -29,7 +29,7 @@ A plot digitizer for battery discharge plots and dQdV plots from scientific lite
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.	Output: A plot digitizer for a new figure type <br />
 
 ### Target Users: <br />
-<ol type='a'>
+<ol type='A'>
 <li>Users with basic working knowledge of terminal or python coding experience, and ability to change image file formats to desired input form </li> 
 <li>Battery Researchers with data science background who want to collect data from literature to look for treds between many figures</li>
 <li>Battery researchers who want to compare their own data to literature values more easily</li>
