@@ -1,8 +1,10 @@
 # DataYoink <br />
 A plot digitizer for battery discharge plots and dQdV plots from scientific literature <br />
-Input: A 2D scientific figure (.jpg). <br /> 
-Output: .csv file with data points (extracted from input) with column labels based on the legend, and axis labels/units <br />
-Basic Use: Works as a python module (eg. import into a python file), or local executable (.exe) <br />
+
+
+**Input:** A 2D scientific figure (.jpg). <br /> 
+**Output:** .csv file with data points (extracted from input) with column labels based on the legend, and axis labels/units <br />
+**Basic Use:** Works as a python module (eg. import into a python file), or local executable (.exe) <br />
 ### Use Cases: <br />
 
 1.	Extract datapoints from battery discharge curves <br />
@@ -26,10 +28,12 @@ Basic Use: Works as a python module (eg. import into a python file), or local ex
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.	Input: Trained neural network that identifies the locations of datapoints on certain types of figures <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.	Output: A plot digitizer for a new figure type <br />
 
-Target Users:
-A.	Users with basic working knowledge of terminal or python coding experience, and ability to change image file formats to desired input form <br /> 
-B.	Battery Researchers with data science background who want to collect data from literature to look for treds between many figures<br />
-C.	Battery researchers who want to compare their own data to literature values more easily<br />
-D.	Battery researchers with older/blurry data that they want to repair and investigate (visually or through data science) <br />	
-E.	Researchers (in general) who want to compare scientific plots with different units <br />
-F.	Researchers (in general) with more advanced python and neural network experience who want to develop a plot digitizer for a different type of plot <br /> 
+### Target Users: <br />
+<ol type='a'>
+<li>Users with basic working knowledge of terminal or python coding experience, and ability to change image file formats to desired input form </li> 
+<li>Battery Researchers with data science background who want to collect data from literature to look for treds between many figures</li>
+<li>Battery researchers who want to compare their own data to literature values more easily</li>
+<li>Battery researchers with older/blurry data that they want to repair and investigate (visually or through data science) </li>	
+<li>Researchers (in general) who want to compare scientific plots with different units </li>
+<li>Researchers (in general) with more advanced python and neural network experience who want to develop a plot digitizer for a different type of plot </li>
+</ol>
