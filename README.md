@@ -37,3 +37,8 @@ A plot digitizer for battery discharge plots and dQdV plots from scientific lite
 <li>Researchers (in general) who want to compare scientific plots with different units </li>
 <li>Researchers (in general) with more advanced python and neural network experience who want to develop a plot digitizer for a different type of plot </li>
 </ol>
+
+This is Doris trying out the Github version control techniques. I just created a branch and now I will merge. <br />
+Hopefully when it merges something went wrong. Yayayaya. !!!!1!!<br />
+<br />
+<br />
