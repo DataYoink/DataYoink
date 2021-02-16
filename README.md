@@ -42,3 +42,9 @@ This is Doris trying out the Github version control techniques. I just created a
 Hopefully when it merges something went wrong. Yayayaya. !!!!1!!<br />
 <br />
 <br />
+Okay now try ing to create some mess.<br />
+Note for Git Version contol:<br />
+1. git checkout branch<br/>
+2. git add/commit/push<br/>
+3. git checkout main<br/>
+4. git merge branch
