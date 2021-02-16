@@ -47,4 +47,5 @@ Note for Git Version contol:<br />
 1. git checkout branch<br/>
 2. git add/commit/push<br/>
 3. git checkout main<br/>
-4. git merge branch
+4. git merge branch <br />
+This A NEW LINE AFTER TIME STAMP.
