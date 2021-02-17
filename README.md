@@ -38,9 +38,29 @@ A plot digitizer for battery discharge plots and dQdV plots from scientific lite
 <li>Researchers (in general) with more advanced python and neural network experience who want to develop a plot digitizer for a different type of plot </li>
 </ol>
 
+<<<<<<< HEAD
 
 
 
 
 
 This is what Kev added
+=======
+This is Doris trying out the Github version control techniques. I just created a branch and now I will merge. <br />
+Hopefully when it merges something went wrong. Yayayaya. !!!!1!!<br />
+<br />
+<br />
+Okay now try ing to create some mess.<br />
+Note for Git Version contol:<br />
+1. git checkout branch<br/>
+2. git add/commit/push<br/>
+3. git checkout main<br/>
+4. git merge branch
+=======
+### branch practice: <br />
+This is christina's addition
+>>>>>>> a2175df4d877c4a9466813c8e23655b0826745de
+=======
+<br />
+This A NEW LINE AFTER TIME STAMP.
+>>>>>>> c4e620e51df54941dbf7a90aa8448e78a2c4947c
