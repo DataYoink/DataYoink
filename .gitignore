@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 .ipynb_checkpoints/
+=======
+# python bytecode
+*.pyc
+
+# notebook temporary files
+.ipynb_checkpoints
+
+# emacs temporary files
+*~
+>>>>>>> christina
