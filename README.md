@@ -12,7 +12,9 @@ Software Dependencies
 
 
 ### Software dependencies
-
+- Detectron2 (requires Linux or macOS)
+- Pytorch >1.6
+- OpenCV is optional but recommended if visualiztion is needed
 
 ### How to install 
 
