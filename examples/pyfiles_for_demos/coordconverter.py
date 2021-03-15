@@ -326,7 +326,7 @@ def write_results_to_excel(output_dict, filename):
     return
 
 
-def datayoink_to_csv(detect_output, axis_info_dict, filename='image'):
+def datayoink_to_excel(detect_output, axis_info_dict, filename='image'):
     """
     Converts the detectron2 prediction output to a list of coordinate values and saves them in
     an excel file (.xlsx) with a name based on filename and one sheet per instance and one sheet
