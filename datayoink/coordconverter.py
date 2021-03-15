@@ -188,7 +188,7 @@ def get_pixels_2d(pixel_array_2d):
                            H and W are the height and width of the input image in pixels
     :return pixel_lst: a list of (x, y) pixels belonging to the same instance
     """
-    result = np.where(pixel_array_2d is True)
+    result = np.where(pixel_array_2d)
     pixel_lst = list(zip(result[1], result[0]))  # gives the x then the y in the tuple
     return pixel_lst
 
