@@ -1,3 +1,11 @@
+import numpy as np
+import pickle
+import PIL
+from PIL import Image
+import matplotlib
+import matplotlib.pyplot as plt
+from detectron2.engine.defaults import DefaultPredictor
+
 def load_trained_nn(pickle_file):
     """
     This function loads the trained nearual network from 
