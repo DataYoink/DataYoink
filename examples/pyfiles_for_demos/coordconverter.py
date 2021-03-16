@@ -301,6 +301,7 @@ def write_results_to_excel(output_dict, filename):
     writer = pd.ExcelWriter(excel_filename, engine='xlsxwriter')
     x_units = output_dict['units'][0]
     y_units = output_dict['units'][1]
+    print('x_units: ', x_units)
 
     # a summary of the start and end of the x axis for each ID
     starts = []
@@ -312,19 +313,17 @@ def write_results_to_excel(output_dict, filename):
         end = output_dict['start_end'][ID][1]
         starts.append(start)
         ends.append(end)
-    df = pd.DataFrame([ids, starts, ends], columns=['ID', 'x start ' + str(x_units), 'x end ' + str(x_units)])
-    df.to_excel(writer, sheet_name='starts_ends')
+    df = pd.DataFrame(list(zip(ids, starts, ends)), columns=['ID', 'x start, ' + str(x_units), 'x end, ' + str(x_units)])
+    df.to_excel(writer, sheet_name='starts_ends', index=False)
 
-    print('this is before the for loop')
     # the actual data in xy form, one ID per sheet
     for ID in output_dict['coordinates'].keys():
-        print('this is the output dict:')
-        print(output_dict)
-        x = output_dict['coordinates'][ID][0]
-        y = output_dict['coordinates'][ID][1]
+        x = [output_dict['coordinates'][ID][i][0] for i in range(len(output_dict['coordinates'][ID]))]
+        y = [output_dict['coordinates'][ID][i][1] for i in range(len(output_dict['coordinates'][ID]))]
         column_titles = ['x, ' + str(x_units), 'y, ' + str(y_units)]
-        df = pd.DataFrame([x, y], columns=column_titles)
-        df.to_excel(writer, sheet_name=str(ID))
+        print(column_titles)
+        df = pd.DataFrame(list(zip(x, y)), columns=column_titles)
+        df.to_excel(writer, sheet_name=str(ID), index=False)
     writer.save()
     return
 

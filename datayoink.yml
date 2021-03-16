@@ -105,11 +105,11 @@ dependencies:
     - cloudpickle==1.6.0
     - cython==0.29.22
     - dataclasses==0.8
-    - detectron2==0.4
+    - detectron2
     - future==0.18.2
     - fvcore==0.1.3.post20210311
-    - google-auth==1.27.1
-    - google-auth-oauthlib==0.4.3
+    - google-auth
+    - google-auth-oauthlib
     - grpcio==1.36.1
     - idna==2.10
     - imgviz==1.2.5
@@ -137,9 +137,9 @@ dependencies:
     - tensorboard==2.4.1
     - tensorboard-plugin-wit==1.8.0
     - termcolor==1.1.0
-    - torch==1.8.0+cpu
-    - torchaudio==0.8.0
-    - torchvision==0.9.0+cpu
+    - torch
+    - torchaudio
+    - torchvision
     - tqdm==4.59.0
     - urllib3==1.26.4
     - werkzeug==1.0.1
