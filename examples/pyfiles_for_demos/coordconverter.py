@@ -301,7 +301,6 @@ def write_results_to_excel(output_dict, filename):
     writer = pd.ExcelWriter(excel_filename, engine='xlsxwriter')
     x_units = output_dict['units'][0]
     y_units = output_dict['units'][1]
-    print('x_units: ', x_units)
 
     # a summary of the start and end of the x axis for each ID
     starts = []
@@ -313,7 +312,8 @@ def write_results_to_excel(output_dict, filename):
         end = output_dict['start_end'][ID][1]
         starts.append(start)
         ends.append(end)
-    df = pd.DataFrame(list(zip(ids, starts, ends)), columns=['ID', 'x start, ' + str(x_units), 'x end, ' + str(x_units)])
+    df = pd.DataFrame(list(zip(ids, starts, ends)),
+                      columns=['ID', 'x start, ' + str(x_units), 'x end, ' + str(x_units)])
     df.to_excel(writer, sheet_name='starts_ends', index=False)
 
     # the actual data in xy form, one ID per sheet
@@ -321,7 +321,6 @@ def write_results_to_excel(output_dict, filename):
         x = [output_dict['coordinates'][ID][i][0] for i in range(len(output_dict['coordinates'][ID]))]
         y = [output_dict['coordinates'][ID][i][1] for i in range(len(output_dict['coordinates'][ID]))]
         column_titles = ['x, ' + str(x_units), 'y, ' + str(y_units)]
-        print(column_titles)
         df = pd.DataFrame(list(zip(x, y)), columns=column_titles)
         df.to_excel(writer, sheet_name=str(ID), index=False)
     writer.save()
@@ -348,6 +347,6 @@ def datayoink_to_excel(detect_output, axis_info_dict, filename='image'):
     elif n_images == 1:
         pred_masks = detect_output['instances'].pred_masks
         output_dict = create_output_dict(pred_masks, axis_info_dict)
-        filename_n = filename + '_' + str(1)
+        filename_n = filename
         write_results_to_excel(output_dict, filename_n)
     return
