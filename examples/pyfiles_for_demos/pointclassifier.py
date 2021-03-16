@@ -4,8 +4,8 @@
 def pointclassifier(userpoints):
     
     origin = []
-    xpixelmax = []
-    ypixelmax = []
+    xpixelmax = float([])
+    ypixelmax = float([])
     
     for i in range(len(userpoints)):
 
@@ -17,15 +17,15 @@ def pointclassifier(userpoints):
         ## x max
         elif userpoints[i,0] == max(userpoints[:,0]):
             print(userpoints[i,:], "is the pixel location of the x-axis max")
-            xaxismax = userpoints[i,:]
+            xpixelmax = userpoints[i,:]
         
         ## y max point
         elif userpoints[i,0] == min(userpoints[:,0]) and userpoints[i,1] == min(userpoints[:,1]):
             print(userpoints[i,:], "is the pixel location of the y-axis max")
-            yaxismax = userpoints[i,:]
+            ypixelmax = userpoints[i,:]
         
         else:
             print(userpoints[i,:],"This point cannot be classified as one of the following: \n*Origin \n*X-coordinate max \n*y-coordinate max")
             break
     
-    return origin, xaxismax, yaxismax
+    return origin, xpixelmax, ypixelmax
