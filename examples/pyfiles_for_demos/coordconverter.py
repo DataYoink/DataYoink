@@ -317,6 +317,7 @@ def write_results_to_excel(output_dict, filename):
 
     # the actual data in xy form, one ID per sheet
     for ID in output_dict['coordinates'].keys():
+        print(output_dict)
         x = output_dict['coordinates'][ID][0]
         y = output_dict['coordinates'][ID][1]
         column_titles = ['x, ' + str(x_units), 'y, ' + str(y_units)]
