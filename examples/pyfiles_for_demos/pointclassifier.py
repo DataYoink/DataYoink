@@ -1,5 +1,7 @@
 ### This function takes in three coordinate points as 1 x 2 nparrays and classifies them as the origin, x-axis max and y-axis max
 
+import math
+
 
 def pointclassifier(userpoints):
     
