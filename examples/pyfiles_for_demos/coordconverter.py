@@ -315,8 +315,10 @@ def write_results_to_excel(output_dict, filename):
     df = pd.DataFrame([ids, starts, ends], columns=['ID', 'x start ' + str(x_units), 'x end ' + str(x_units)])
     df.to_excel(writer, sheet_name='starts_ends')
 
+    print('this is before the for loop')
     # the actual data in xy form, one ID per sheet
     for ID in output_dict['coordinates'].keys():
+        print('this is the output dict:')
         print(output_dict)
         x = output_dict['coordinates'][ID][0]
         y = output_dict['coordinates'][ID][1]
