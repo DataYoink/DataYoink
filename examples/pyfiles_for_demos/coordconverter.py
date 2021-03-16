@@ -348,6 +348,6 @@ def datayoink_to_excel(detect_output, axis_info_dict, filename='image'):
     elif n_images == 1:
         pred_masks = detect_output['instances'].pred_masks
         output_dict = create_output_dict(pred_masks, axis_info_dict)
-        filename_n = filename + '_' + str(1)
+        filename_n = filename
         write_results_to_excel(output_dict, filename_n)
     return
