@@ -313,7 +313,7 @@ def write_results_to_excel(output_dict, filename):
         end = output_dict['start_end'][ID][1]
         starts.append(start)
         ends.append(end)
-    df = pd.DataFrame(list(zip(ids, starts, ends)), columns=['ID', 'x start ' + str(x_units), 'x end ' + str(x_units)])
+    df = pd.DataFrame(list(zip(ids, starts, ends)), columns=['ID', 'x start, ' + str(x_units), 'x end, ' + str(x_units)])
     df.to_excel(writer, sheet_name='starts_ends', index=False)
 
     # the actual data in xy form, one ID per sheet
