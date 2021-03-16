@@ -9,12 +9,10 @@ def get_axis_info(xcoordinatemin, xcoordinatemax, xpixelmax, ycoordinatemin, yco
     conversion process.
     :param xcoordinatemin: float, smallest value along the x axis in input image (location of origin)
     :param xcoordinatemax: float, largest value along the x axis in input image
-    :param xpixelmax: int, pixel location along x axis (integer distance from left side of image)
-                      of the xcoordinatemax
+    :param xpixelmax: array of length 2, location in pixels of xcoordinatemax point
     :param ycoordinatemin: float, smallest value along the y axis in input image (location of origin)
     :param ycoordinatemax: float, largest value along the y axis in input image
-    :param ypixelmax: int, pixel location along y axis (integer distance from top edge of image)
-                      of the ycoordinatemax
+    :param ypixelmax: array of length 2, location in pixels of xcoordinatemax point
     :param origin: array of length 2 with the pixel location of the origin:
                    origin[0] is the pixel location along x axis (integer distance from left side of image)
                    of the xcoordinatemin.
@@ -25,10 +23,12 @@ def get_axis_info(xcoordinatemin, xcoordinatemax, xpixelmax, ycoordinatemin, yco
     :return axis_info_dict: a dictionary with the following fields: pixel_origin, x_scale, y_scale, step,
                             units, y_pixel_range, and x_pixel_range.
     """
-    # this code assumes that ypixelmin < ypixelmax, which is not the case for the input, so a small correction is made
-    ypixelmin_true = ypixelmax
+    # this code assumes that ypixelmin_true < ypixelmax_true, which is not the case for the input,
+    # so a small correction is made
+    ypixelmin_true = ypixelmax[1]
     ypixelmax_true = origin[1]
     xpixelmin = origin[0]
+    xpixelmax = xpixelmax[0]
     x_scale = get_x_scale(xcoordinatemin, xcoordinatemax, xpixelmin, xpixelmax)
     y_scale = get_x_scale(ycoordinatemin, ycoordinatemax, ypixelmin_true, ypixelmax_true)
     pixel_origin = (xpixelmin, ypixelmax_true)  # assumes that y pixel max is the smaller y value
