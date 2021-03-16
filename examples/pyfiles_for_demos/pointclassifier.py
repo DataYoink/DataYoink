@@ -4,8 +4,8 @@
 def pointclassifier(userpoints):
     
     origin = []
-    xaxismax = []
-    yaxismax = []
+    xpixelmax = []
+    ypixelmax = []
     
     for i in range(len(userpoints)):
 
