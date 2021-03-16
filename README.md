@@ -21,9 +21,18 @@ to model accuracy and support expanded to a variety of different plot types (inc
 
 ### How to install 
 
+Coming Soon!
+
 
 ### DataYoink tutorial
 
+The ```examples``` folder contains jupyter notebooks with demos of how to use different
+aspects of the DataYoink package:
+- ```Demo_Using_Pretrained_Mask``` gives detailed steps for how to use DataYoink and Detectron2
+to extract coordinate points from an image and save them in an excel file
+- ```Demo_Resize_and_Register_Training_Dataset``` gives an overview of how to train a similar
+neural network using your own set of training images and create the output files from
+Detectron2 requred for use in the DataYoink coordinate extraction tool.
 
 ### Organization of repo <br />
 ```
@@ -89,6 +98,8 @@ to model accuracy and support expanded to a variety of different plot types (inc
 
 ```
 ### Input Requirements
+
+DataYoink currently requires images to be of the ```.png``` format.
 
 
 ### Have any issues or suggestions?
