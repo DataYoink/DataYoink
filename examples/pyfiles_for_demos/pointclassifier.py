@@ -9,18 +9,18 @@ def pointclassifier(userpoints):
     
     for i in range(len(userpoints)):
 
-        ## origin
-        if userpoints[i,0] == min(userpoints[:,0]) and userpoints[i,1] == max(userpoints[:,1]):
+        ## classify which pixel point is the origin
+        if math.isclose(userpoints[i,0], min(userpoints[:,0]), rel_tol = 0.07 ) == True and math.isclose(userpoints[i,1], max(userpoints[:,1]), rel_tol = 0.07) == True:
             print(userpoints[i,:], "is the pixel location of the origin")
             origin = userpoints[i,:]
     
-        ## x max
-        elif userpoints[i,0] == max(userpoints[:,0]):
+        ## classify which pixel point is the x max point on the x-axis coordinate
+        elif math.isclose(userpoints[i,0], max(userpoints[:,0]), rel_tol = 0.07 ) == True:
             print(userpoints[i,:], "is the pixel location of the x-axis max")
             xpixelmax = userpoints[i,:]
         
-        ## y max point
-        elif userpoints[i,0] == min(userpoints[:,0]) and userpoints[i,1] == min(userpoints[:,1]):
+        ## classify which pixel point is the y max point on the y-axis coordinate
+        elif math.isclose(userpoints[i,0], min(userpoints[:,0]), rel_tol = 0.07 ) == True and math.isclose(userpoints[i,1], min(userpoints[:,1]), rel_tol = 0.07 ) == True:
             print(userpoints[i,:], "is the pixel location of the y-axis max")
             ypixelmax = userpoints[i,:]
         
