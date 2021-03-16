@@ -27,64 +27,64 @@ to model accuracy and support expanded to a variety of different plot types (inc
 
 ### Organization of repo <br />
 ```
-|   LICENSE <br />
-|   README.md <br />
-|   requirements.txt <br />
-|   setup.py <br />
-|   datayoink.yml <br />
-|   .gitignore <br />
-|<br />
-+---docs <br />
-|   |   ComponentChart.pdf <br />
-|   |   Use_Cases.md <br />
-|   |<br />
-|   \---dev <br />
-|           ChristinaNotebook.ipynb <br />
-|<br />
-+---examples <br />
-|   |   Demo_Using_Pretrained_Mask.ipynb<br />
-|   |   Demo_Resize_and_Register_Training_Dataset.ipynb<br/>
-|   |   Demo_load_NN_from_pkl.ipynb<br/>
-|   |<br/>
-|   +---pyfiles_for_demos<br/>
-|   |   |   coordconverter.py<br/>
-|   |   |   img_rescale.py<br/>
-|   |   |   pointclassifier.py<br/>
-|   |   |   predict.py<br/>
-|   |<br/>
-|   +---discharge_curve_json<br/>
-|   |   |   discharge_curve (1).json<br/>
-|   |   |   ...<br/>
-|   |<br/>
-|   +---discharge_curve_image<br/>
-|   |   |   discharge_curve (1).png<br/>
+|   LICENSE
+|   README.md
+|   requirements.txt
+|   setup.py
+|   datayoink.yml
+|   .gitignore
+|
++---docs
+|   |   ComponentChart.pdf
+|   |   Use_Cases.md
+|   |
+|   \---dev
+|           ChristinaNotebook.ipynb
+|
++---examples
+|   |   Demo_Using_Pretrained_Mask.ipynb
+|   |   Demo_Resize_and_Register_Training_Dataset.ipynb
+|   |   Demo_load_NN_from_pkl.ipynb
+|   |
+|   +---pyfiles_for_demos
+|   |   |   coordconverter.py
+|   |   |   img_rescale.py
+|   |   |   pointclassifier.py
+|   |   |   predict.py
+|   |
+|   +---discharge_curve_json
+|   |   |   discharge_curve (1).json
 |   |   |   ...
-|   |<br/>
-|<br/>
-\---datayoink<br/>
-    |   __init__.py<br/>
-    |   coordconverter.py<br/>
-    |   img_rescale.py<br/>
-    |   predict.py<br/>
-    |   register_data.py<br/>
-    |<br/>
-    \---tests<br/>
+|   |
+|   +---discharge_curve_image
+|   |   |   discharge_curve (1).png
+|   |   |   ...
+|   |
+|
+\---datayoink
+    |   __init__.py
+    |   coordconverter.py
+    |   img_rescale.py
+    |   predict.py
+    |   register_data.py
+    |
+    \---tests
         |   __init__.py
-        |   predict_function_and_test.ipynb<br/>
-        |   test_register_data.ipynb<br/>
-        |   test_coordconverter.py<br/>
-        |   test_img_rescale.py<br/>
-        |   test_predict.py<br/>
-        |   test_register_data.py<br/>
-        |<br/>
-        \---test_data<br/>
-            |   test_config.pkl<br/>
-            |   test_png.png<br/>
-            |   test_predict.pkl<br/>
-            |<br/>
-            \---test_json<br/>
-                    test_json1.json<br/>
-                    test_json2.json<br/>
+        |   predict_function_and_test.ipynb
+        |   test_register_data.ipynb
+        |   test_coordconverter.py
+        |   test_img_rescale.py
+        |   test_predict.py
+        |   test_register_data.py
+        |
+        \---test_data
+            |   test_config.pkl
+            |   test_png.png
+            |   test_predict.pkl
+            |
+            \---test_json
+                    test_json1.json
+                    test_json2.json
 
 
 ```
