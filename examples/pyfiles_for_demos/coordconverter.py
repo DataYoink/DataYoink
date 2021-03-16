@@ -7,13 +7,13 @@ def get_axis_info(xcoordinatemin, xcoordinatemax, xpixelmax, ycoordinatemin, yco
     """
     Collects information provided by the user into a convenient dictionary form to be used in the csv
     conversion process.
-    :param xcoordinatemin: array with length 1, smallest value along the x axis in input image (location of origin)
-    :param xcoordinatemax: array with length 1, largest value along the x axis in input image
-    :param xpixelmax: array with length 1, pixel location along x axis (integer distance from left side of image)
+    :param xcoordinatemin: float, smallest value along the x axis in input image (location of origin)
+    :param xcoordinatemax: float, largest value along the x axis in input image
+    :param xpixelmax: int, pixel location along x axis (integer distance from left side of image)
                       of the xcoordinatemax
-    :param ycoordinatemin: array with length 1, smallest value along the y axis in input image (location of origin)
-    :param ycoordinatemax: array with length 1, largest value along the y axis in input image
-    :param ypixelmax: array with length 1, pixel location along y axis (integer distance from top edge of image)
+    :param ycoordinatemin: float, smallest value along the y axis in input image (location of origin)
+    :param ycoordinatemax: float, largest value along the y axis in input image
+    :param ypixelmax: int, pixel location along y axis (integer distance from top edge of image)
                       of the ycoordinatemax
     :param origin: array of length 2 with the pixel location of the origin:
                    origin[0] is the pixel location along x axis (integer distance from left side of image)
@@ -26,19 +26,19 @@ def get_axis_info(xcoordinatemin, xcoordinatemax, xpixelmax, ycoordinatemin, yco
                             units, y_pixel_range, and x_pixel_range.
     """
     # this code assumes that ypixelmin < ypixelmax, which is not the case for the input, so a small correction is made
-    ypixelmin_true = ypixelmax[0]
+    ypixelmin_true = ypixelmax
     ypixelmax_true = origin[1]
     xpixelmin = origin[0]
-    x_scale = get_x_scale(xcoordinatemin[0], xcoordinatemax[0], xpixelmin, xpixelmax[0])
-    y_scale = get_x_scale(ycoordinatemin[0], ycoordinatemax[0], ypixelmin_true, ypixelmax_true)
+    x_scale = get_x_scale(xcoordinatemin, xcoordinatemax, xpixelmin, xpixelmax)
+    y_scale = get_x_scale(ycoordinatemin, ycoordinatemax, ypixelmin_true, ypixelmax_true)
     pixel_origin = (xpixelmin, ypixelmax_true)  # assumes that y pixel max is the smaller y value
     axis_info_dict = {'pixel_origin': pixel_origin,
                       'x_scale': x_scale,
                       'y_scale': y_scale,
-                      'step': get_step(max_points, xpixelmin, xpixelmax[0]),
+                      'step': get_step(max_points, xpixelmin, xpixelmax),
                       'units': (units[0], units[1]),
                       'y_pixel_range': (ypixelmin_true, ypixelmax_true),
-                      'x_pixel_range': (xpixelmin, xpixelmax[0])}
+                      'x_pixel_range': (xpixelmin, xpixelmax)}
     return axis_info_dict
 
 
