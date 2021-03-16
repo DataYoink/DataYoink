@@ -101,4 +101,6 @@ def show_output_img_and_mask(PNG_image,prediction):
         #plt.imshow(mask_array[mask,:,:],alpha=1)
         plt.figure()
         plt.imshow(img_array,alpha=1)
+        plt.axis('off')
         plt.imshow(mask_array[mask,:,:],alpha=0.8)
+        plt.axis('off')
