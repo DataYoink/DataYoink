@@ -68,27 +68,6 @@ def dictionary_fuction_for_detectron2(directory, img_height, img_width):
     """
     dictionary, imgs, polygon_list = json_to_dict(directory, img_height, img_width)
     return dictionary
-
-def show_img_and_mask(imgs,polygon_list):
-    """
-    Input:
-        - list of nd array images
-        - list of polygon mask vertex coordinates
-    Output:
-        - Inline plot with images and masks
-    """
-    mask = []
-    for img_num,polygon in enumerate(polygon_list):
-        plt.figure()
-        plt.imshow(imgs[img_num],alpha=1)
-        for mask_num,item in enumerate(polygon):
-            poly = item.tolist()
-            poly.append(item[-1].tolist())
-            #print(poly)
-            x, y = zip(*poly)
-            mask.append(plt.fill(x,y,alpha=0.5,color="r"))
-    for index,item in enumerate(mask):
-        plt.show(mask[index])
         
 def json_to_arrs(json_file):
     """

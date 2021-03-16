@@ -19,8 +19,11 @@ def img_rescale(PNG_img, height, width):
         width - expected width after conversion in unit of pixels
     
     Output:
-        new_img - an nd array of the rescaled image 
+        new_img - an nd array of the rescaled image
+        A rescaled .png image saved in ./scaled_input_image directory
     """
+    # Assert input is PNG
+    assert os.path.splitext(PNG_img)[1] == ".png", "Input has the wrong file type. A .png image is required."
     if not os.path.exists("scaled_input_image"):
         os.mkdir("scaled_input_image") # new directory to store the scaled images
     img = Image.open(PNG_img) 
@@ -29,6 +32,6 @@ def img_rescale(PNG_img, height, width):
     new_img = scale.apply_image(img_array, "bilinear")
     print("original image shape:",img_array.shape,"is scaled to new image shape",new_img.shape)
     img2save = Image.fromarray(new_img)
-    img2save.save("./scaled_input_image/scaled_"+PNG_img)
-    #plt.imshow(new_img)
+    img_name = os.path.split(PNG_img)[-1]
+    img2save.save("./scaled_input_image/scaled_"+img_name)
     return new_img
