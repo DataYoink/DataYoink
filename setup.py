@@ -7,6 +7,16 @@ https://github.com/pypa/sampleproject
 """
 
 import setuptools
+import sys
+import os 
+from os.path import abspath, dirname
+from setuptools import setup, find_packages
+PACKAGES = find_packages()
+
+src_dir = dirname(abspath(__file__))
+requires_path = abspath(pjoin(src_dir, "requirements.txt"))
+with open(requires_path) as f:
+    REQUIRES = [line.strip('\n') for line in f.readlines()]
 
 # Get the long description from the README file
 with open("README.md", "r") as f:
@@ -20,7 +30,7 @@ setuptools.setup(
     description="A plot digitizer for battery discharge plots and dQdV plots from scientific literature",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url="",
+    download_url="https://github.com/DataYoink/DataYoink",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -29,9 +39,6 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        
+        REQUIRES
     ],
-    tests_require=[
-        
-    ]
 )
