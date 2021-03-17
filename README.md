@@ -64,7 +64,7 @@ follow [INSTALL.md](https://github.com/facebookresearch/detectron2/blob/master/I
 The ```examples``` folder contains jupyter notebooks with demos of how to use different
 aspects of the DataYoink package:
 - ```Demo_Using_Pretrained_Mask``` gives detailed steps for how to use DataYoink and Detectron2
-to extract coordinate points from an image and save them in an excel file
+to extract coordinate points from an image and save them in an excel file. Remember to download the [pretrained neural network](https://drive.google.com/file/d/1nTSYiEJO9sQXS6oMbRplGWmQ0AjRs9ss/view?usp=sharing) and [configuration file](https://drive.google.com/file/d/1fYthIcfHDZEA9ygazq0KYYi7ha-I8u55/view?usp=sharing).
 - ```Demo_Resize_and_Register_Training_Dataset``` gives an overview of how to train a similar
 neural network using your own set of training images and create the output files from
 Detectron2 requred for use in the DataYoink coordinate extraction tool.
