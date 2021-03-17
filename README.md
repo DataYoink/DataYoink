@@ -99,7 +99,9 @@ Detectron2 requred for use in the DataYoink coordinate extraction tool.
 ```
 ### Input Requirements
 
-DataYoink currently requires images to be of the ```.png``` format.
+DataYoink currently requires input images to be of the ```.png``` format.
+DataYoink functions for creating training dataset dictionary requires .json
+annotations created by ```labelme```.
 
 
 ### Have any issues or suggestions?
