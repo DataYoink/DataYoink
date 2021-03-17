@@ -21,7 +21,42 @@ to model accuracy and support expanded to a variety of different plot types (inc
 
 ### How to install 
 
-Coming Soon!
+To fully utilize DataYoink and the corresponding examples, clone this repository and from the root directory run:
+```
+conda env create -f datayoink.yml
+```
+
+This will install all packages necessary for DataYoink except for Detectron2.
+
+To install Detectron2, make sure to be in the newly created DataYoink environment.
+
+In the active environment, run:
+
+```
+ipython kernel install --user --name=DataYoink
+````
+This creates a unique kernel for DataYoink.
+
+##### Installing Detectron2
+
+Note: gcc & g++ ≥ 5.4 are required to install and utilize Detectron2. [ninja](https://ninja-build.org/) is recommended for faster build. After having them, run:
+
+```
+python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+# (add --user if you don't have permission)
+
+# Or, to install it from a local clone:
+git clone https://github.com/facebookresearch/detectron2.git
+python -m pip install -e detectron2
+
+# Or if you are on macOS
+CC=clang CXX=clang++ ARCHFLAGS="-arch x86_64" python -m pip install ......
+```
+To rebuild detectron2 that's built from a local clone, use rm -rf build/ **/*.
+
+or
+
+follow [INSTALL.md](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md) provided by facebookresearch
 
 
 ### DataYoink tutorial
