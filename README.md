@@ -83,18 +83,32 @@ Detectron2 requred for use in the DataYoink coordinate extraction tool.
 |   |   Use_Cases.md
 |   |
 |   \---dev
-|           ChristinaNotebook.ipynb
+|   |   ChristinaNotebook.ipynb
+|   |   Dataset_Cleanup.ipynb
+|   |   Demo_load_NN_from_pkl.ipynb
+|   |   DorisNotebook.ipynb
+|   |   Input_image_resize.ipynb
+|   |   KevNotebook.ipynb
+|   |   KevNotebook_Copy.ipynb
+|   |   KevinDetectron2.ipynb
+|   |   plot.jpg
 |
 +---examples
+|   |   __init__.py
 |   |   Demo_Using_Pretrained_Mask.ipynb
 |   |   Demo_Resize_and_Register_Training_Dataset.ipynb
 |   |   Demo_load_NN_from_pkl.ipynb
+|   |   Test_color_1solid.png
+|   |   Test_color.png
+|   |   Test_bw_1solid.png
+|   |   Test_bw.png
 |   |
 |   +---pyfiles_for_demos
 |   |   |   coordconverter.py
 |   |   |   img_rescale.py
 |   |   |   pointclassifier.py
 |   |   |   predict.py
+|   |   |   register_data.py
 |   |
 |   +---discharge_curve_json
 |   |   |   discharge_curve (1).json
@@ -104,6 +118,10 @@ Detectron2 requred for use in the DataYoink coordinate extraction tool.
 |   |   |   discharge_curve (1).png
 |   |   |   ...
 |   |
+|
++---dist
+|   |   DataYoink-1.0.0-py3-none-any.whl
+|   |   DataYoink-1.0.0.tar.gz
 |
 \---datayoink
     |   __init__.py
