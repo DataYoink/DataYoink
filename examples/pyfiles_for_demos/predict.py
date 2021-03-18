@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pickle
 import PIL
@@ -8,10 +9,10 @@ from detectron2.engine.defaults import DefaultPredictor
 
 def load_trained_nn(pickle_file):
     """
-    This function loads the trained nearual network from 
+    This function loads the trained nearual network from
     the local .pkl file as a predictor
     Input:
-        - pickle_file: .pkl file containing the configurations 
+        - pickle_file: .pkl file containing the configurations
                         of the neural network that can be loaded
                         into Detectron2 Default Predictor
     Output:
@@ -19,8 +20,11 @@ def load_trained_nn(pickle_file):
                      weights ad parameters from the pickle
                      file
     """
+    
     # Load the configurations from the .pkl file
     with open(pickle_file, 'rb') as file:
+        # Assert the input type
+        assert os.path.splitext(pickle_file)[1] == ".pkl", "Input has the wrong file type. A pickle file is required."
         cfg = pickle.load(file)
     # Use Default predictor to load the pretrained NN
     predictor = DefaultPredictor(cfg)
@@ -42,6 +46,8 @@ def predict_discharge_curve(pickle_file, img_array):
     """
     # Load the neural network as .pkl file
     with open(pickle_file, 'rb') as file:
+        # Assert the input type
+        assert os.path.splitext(pickle_file)[1] == ".pkl", "Input has the wrong file type. A pickle file is required."
         cfg = pickle.load(file)
     # Use Default predictor to load the pretrained NN
     predictor = DefaultPredictor(cfg)
@@ -59,9 +65,6 @@ def read_img_to_BGR(img_array):
     Output: 
         - BGR_img: nd array with size (image_height, image_width, 3)
     """
-    #im = Image.open(image_file) # Read R,G,B, and alpha
-    #img_array = np.array(im)
-    # Check image dimension
     # If B&W, convert to shape (W,H,3)
     if len(img_array.shape) == 2:
         img_array = np.stack((img_array,img_array,img_array), axis=2)
@@ -76,7 +79,7 @@ def read_img_to_BGR(img_array):
     BGR_img[:,:,2] = img_array[:,:,0]
     return BGR_img
 
-def show_output_img_and_mask(PNG_image,prediction):
+def show_output_img_and_mask(PNG_image, prediction):
     """
     This function shows the image and the mask from a .json file.
     Input: 
@@ -85,22 +88,17 @@ def show_output_img_and_mask(PNG_image,prediction):
     Output:
         - Inline plot with image and predicted masks
     """
+    assert os.path.splitext(PNG_image)[1] == ".png", "Input has the wrong file type. A .png image is required."
+    assert isinstance(prediction, dict), "Input prediction varialbe is not a dicitonary"
     mask = prediction["instances"].pred_masks
     mask_array = np.array(mask)
     im = Image.open(PNG_image)
     img_array = np.array(im)
-    # Assert that there are predicted masks
-    # assert np.size(mask_array) != 0, "No instance predicted"
+    # Return notice if no instance is predicted
     if np.size(mask_array) == 0:
         print("No instance predicted, showing only the image")
         plt.imshow(img_array,alpha=1)
     for mask in range(mask_array.shape[0]):
-        #plt.figure()
-        #plt.imshow(img_array,alpha=1)
-        #plt.figure()
-        #plt.imshow(mask_array[mask,:,:],alpha=1)
         plt.figure()
         plt.imshow(img_array,alpha=1)
-        plt.axis('off')
         plt.imshow(mask_array[mask,:,:],alpha=0.8)
-        plt.axis('off')
